@@ -1,0 +1,6 @@
+.Contenido{
+    color: red;
+    display: flex;
+    font-size: 3rem;
+    justify-content: center;
+}

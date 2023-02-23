@@ -1,10 +1,16 @@
 
+import Footer from "./Components/Footer/Footer";
+import ItemListContainer from "./Components/ItemListContainer/ItemListContainer.jsx";
+import Navbar from "./Components/Navbar/Navbar.jsx";
+
 function App() {
   return (
-    <div>
-      <h1>HOLA MUNDO!</h1>
-    </div>
-  );
+  <div>
+    <Navbar/>
+    <ItemListContainer greeting={"Bienvenidos a Leather & Steel"}/>
+    <Footer/>
+  </div>
+  )
 }
 
 export default App;
