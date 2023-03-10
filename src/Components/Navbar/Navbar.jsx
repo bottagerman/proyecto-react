@@ -1,23 +1,18 @@
 import CartWidget from "../CartWidget/CartWidget";
-import "./Navbar.css";
+import styles from "./Navbar.module.css";
+import {Link} from "react-router-dom"
 
 const Navbar = () => {
   return (
-    <ul className="lista">
-      <li>
-        <a href="#">Cuero</a>
-      </li>
-      <li>
-        <a href="#">Cuchillos</a>
-      </li>
-      <li>
-        <a href="#">Motos</a>
-      </li>
-      <li>
-        <a href="#">Contacto</a>
-      </li>
-      <a href="#"><CartWidget /></a>
-    </ul>
+    <div className={styles.lista}>
+      <Link to={"/"}> <h1 className={styles.logo}>Leather & Steel</h1></Link>
+      <ul className={styles.containerList}>
+        <Link to="category/cueros" className={styles.navbarItem}>Cuero</Link>
+        <Link to="category/cuchillos" className={styles.navbarItem}>Cuchillos</Link>
+        <Link to="category/motos" className={styles.navbarItem}>Motos</Link>
+        <CartWidget/>
+      </ul>
+    </div>
   );
 };
 

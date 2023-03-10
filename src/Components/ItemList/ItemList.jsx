@@ -3,18 +3,24 @@ import Items from "../Items/Items";
 
 const ItemList = ({ items }) => {
   return (
-    <div style={ {
+    <div
+      style={{
         display: "flex",
         justifyContent: "space-evenly",
         alingItems: "center",
         flexWrap: "wrap",
-        marginTop: "20px"
-    }
-
-    }>
+        marginTop: "30px",
+      }}
+    >
       {items.map((element) => {
         return (
-          <div>
+          <div
+            style={{
+              border: "1px solid brown",
+              borderRadius: "4px",
+              margin: "20px 20px",
+            }}
+          >
             <Items key={element.id} element={element} />
           </div>
         );
