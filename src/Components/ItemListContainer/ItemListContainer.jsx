@@ -7,7 +7,6 @@ import { useParams } from "react-router-dom";
 const ItemListContainer = () => {
   
   const {categoryName} = useParams ();
-  console.log(categoryName)
   const [items, setItems] = useState ([]);
 
   const productosFiltrados = productos.filter( (element) => element.category === categoryName)
