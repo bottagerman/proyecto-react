@@ -9,16 +9,19 @@ const Cart = () => {
 const {cart} = useContext (CartContex)
 
   return (
-    <div>
+    <div style={{width: "100%", display: "flex", justifyContent:"space-evenly", marginTop: "20px"}}>
       {cart.map((elemento) => {
-        return <div key= {elemento.id}>
+        return <div key= {elemento.id} style={{border: "2px solid brown", borderRadius: "4px" }}>
           <h2>
             {elemento.title}
           </h2>
+          <img src={elemento.img} alt={elemento.title} style={{width:"200px", padding:" 10px", height:" 200px"}}/>
           <h3>
             {elemento.price}
           </h3>
-
+          <h3>
+          Cantidad: {elemento.quantity}
+          </h3>
         </div>
         
       } )}

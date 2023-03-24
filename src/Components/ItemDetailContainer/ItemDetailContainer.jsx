@@ -6,12 +6,25 @@ import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
+
   const {agregarAlCarrito} = useContext (CartContex)
+
   const productoSeleccionado = productos.find(
+
     (element) => element.id === Number(id)
   );
+
   const onAdd = (cantidad) => {
-    agregarAlCarrito(productoSeleccionado)
+
+    let producto = {
+      ...productoSeleccionado,
+      quantity: cantidad
+
+    }
+
+    agregarAlCarrito(producto)
+
+
   };
   return (
     <div>
