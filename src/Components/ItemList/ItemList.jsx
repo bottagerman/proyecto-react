@@ -20,8 +20,8 @@ const ItemList = ({ items }) => {
               borderRadius: "4px",
               margin: "20px 20px",
             }}
-          >
-            <Items key={element.id} element={element} />
+            key={element.id} >
+            <Items element={element} />
           </div>
         );
       })}

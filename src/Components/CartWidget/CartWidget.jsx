@@ -20,7 +20,7 @@ const CartWidget = () => {
         <BsFillCartPlusFill size={35} /></div>
       <div className= {styles.cartCounter} >
       <span>
-       
+      {cart.length}
       </span>
       </div>
     </Link>
