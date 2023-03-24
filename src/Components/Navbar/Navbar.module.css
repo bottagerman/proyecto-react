@@ -1,6 +1,7 @@
 .lista {
   font-size: 1.5em;
   background-color: rgb(128, 64, 0, 1);
+  border: 2px dashed black;
   padding: 25px 25px;
 }
 .logo{

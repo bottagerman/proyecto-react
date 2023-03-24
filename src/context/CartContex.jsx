@@ -9,6 +9,17 @@ const CartContexProvider = ({ children }) => {
     let existe = isInCart(producto.id);
 
     if (existe) {
+      let newCart = cart.map((elemento) => {
+        if (elemento.id === producto.id) {
+          return {
+            ...elemento,
+            quantity: elemento.quantity + producto.quantity,
+          };
+        } else {
+          return elemento;
+        }
+      });
+      setCart(newCart);
     } else {
       setCart([...cart, producto]);
     }
@@ -17,9 +28,14 @@ const CartContexProvider = ({ children }) => {
     return cart.some((elemento) => elemento.id === id);
   };
 
+  const clearCart = ( ) => {
+    setCart ([])
+  }
+
   let data = {
-    cart: cart,
-    agregarAlCarrito: agregarAlCarrito,
+    cart,
+    agregarAlCarrito,
+    clearCart, 
   };
 
   return <CartContex.Provider value={data}>{children}</CartContex.Provider>;
