@@ -7,7 +7,7 @@ const Navbar = () => {
     <div className={styles.lista}>
       <Link to={"/"} style={{textDecoration:"none"}}> <h1 className={styles.logo}>Leather & Steel</h1></Link>
       <ul className={styles.containerList}>
-        <Link to="category/cueros" className={styles.navbarItem}>Cuero</Link>
+        <Link to="category/cueros" className={styles.navbarItem}>Cueros</Link>
         <Link to="category/cuchillos" className={styles.navbarItem}>Cuchillos</Link>
         <Link to="category/motos" className={styles.navbarItem}>Motos</Link>
         <CartWidget />
