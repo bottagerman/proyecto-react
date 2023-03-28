@@ -11,23 +11,15 @@ const ItemListContainer = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const itemsCollection = collection(db, "productos");
-    let consulta = undefined;
-
-    if (categoryName) {
-      const q = query(itemsCollection, where("category", "==", categoryName));
-      consulta = getDocs(q);
-    } else {
-      consulta = getDocs(itemsCollection);
-    }
-    consulta.then((res) => {
-      res.docs.map((productos) => {
+    const itemsCollection = categoryName ? query(collection(db, "productos"), where("category", "==", categoryName)):collection(db, "productos")
+    getDocs(itemsCollection).then((res) => {
+      const data = res.docs.map((productos) => {
         return {
           ...productos.data(),
           id: productos.id,
         };
       });
-      setItems(productos);
+      setItems(data);
     });
   }, [categoryName]);
   console.log(productos.category)
