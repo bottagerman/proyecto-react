@@ -21,12 +21,12 @@ const Items = ({element}) => {
           {element.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-            {element.description + "."} {"Valor $" + element.price}
+            {element.description + "."}
         </Typography>
       </CardContent>
       <CardActions>
-       <Link to={`/itemDetail/${element.id}`}>
-        <Button size="small" color="error">Ver detalle</Button>
+       <Link to={`/itemDetail/${element.id}`} style={{textDecoration:"none"}}>
+        <Button size="small" color="error" variant ="contained" >Ver detalle</Button>
        </Link>
       </CardActions>
     </Card>

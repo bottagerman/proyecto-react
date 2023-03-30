@@ -2,7 +2,6 @@ import { Difference } from "@mui/icons-material";
 import { dialogClasses } from "@mui/material";
 import React, { useContext } from "react";
 import { CartContex } from "../../context/CartContex";
-import CartTable from "../CartTable/CartTable";
 
 
 const Cart = () => {
@@ -13,7 +12,7 @@ const {cart, clearCart} = useContext (CartContex)
     <div style={{width: "100%", display: "flex", justifyContent:"space-evenly", marginTop: "20px"}}>
       {cart.map((elemento) => {
         return <div key= {elemento.id} style={{border: "2px solid brown", borderRadius: "4px", textAlign: "center", padding: "10px"}}>
-{/*           <h2>
+          <h2>
             {elemento.title}
           </h2>
           <img src={elemento.img} alt={elemento.title} style={{width:"200px", padding:" 10px", height:" 200px", borderRadius: "5px"}}/>
@@ -22,8 +21,8 @@ const {cart, clearCart} = useContext (CartContex)
           </h3>
           <h3>
           Cantidad: {elemento.quantity}
-          </h3> */}
-          <CartTable />
+          </h3>
+       
 
 
         </div>
