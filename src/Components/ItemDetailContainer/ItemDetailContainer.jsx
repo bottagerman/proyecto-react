@@ -1,36 +1,41 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { CartContex } from "../../context/CartContex";
-import { productos } from "../../productsMock";
-import ItemCount from "../ItemCount/ItemCount";
+import { useState, useEffect } from "react";
+import { getDoc, collection, doc } from "firebase/firestore";
+import { db } from "../../firebaseConfig";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
 
-  const {agregarAlCarrito} = useContext (CartContex)
+  const { agregarAlCarrito } = useContext(CartContex);
 
-  const productoSeleccionado = productos.find(
+  const [productoSeleccionado, setProductoSeleccionado] = useState({});
 
-    (element) => element.id === Number(id)
-  );
+  useEffect(() => {
+    const itemCollection = collection(db, "productos");
+    const ref = doc(itemCollection, id);
+    getDoc(ref).then((res) => {
+      setProductoSeleccionado({
+        ...res.data(),
+        id: res.id,
+      });
+    });
+  }, [id]);
 
   const onAdd = (cantidad) => {
-
     let producto = {
       ...productoSeleccionado,
-      quantity: cantidad
+      quantity: cantidad,
+    };
 
-    }
-
-    agregarAlCarrito(producto)
-
-
+    agregarAlCarrito(producto);
   };
   return (
     <div>
-      <h1>{productoSeleccionado.title}</h1>
-      <img src={productoSeleccionado.img} alt={productoSeleccionado.title} />
-      <ItemCount stock={productoSeleccionado.stock} onAdd={onAdd} />
+      <ItemDetail producto= {productoSeleccionado} onAdd ={onAdd} />
+
     </div>
   );
 };

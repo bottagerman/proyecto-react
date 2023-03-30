@@ -1,5 +1,4 @@
 import "./ItemListContainer.css";
-import { productos } from "../../productsMock.js";
 import { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
@@ -22,7 +21,7 @@ const ItemListContainer = () => {
       setItems(data);
     });
   }, [categoryName]);
-  console.log(productos.category)
+ 
   return (
     <div>
       <ItemList items={items} />
