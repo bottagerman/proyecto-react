@@ -3,6 +3,8 @@ import styles from "./CartWidget.module.css"
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContex } from "../../context/CartContex";
+import Badge from '@mui/material/Badge';
+
 
 
 const CartWidget = () => {
@@ -14,14 +16,11 @@ const CartWidget = () => {
       <div style={{
         position: "relative",
         color: "black",
-        
 
       }}>
-        <BsFillCartPlusFill size={35} /></div>
-      <div className= {styles.cartCounter} >
-      <span>
-      {cart.length}
-      </span>
+        <Badge badgeContent = {cart.lenght} color = "error" showZero> 
+        <BsFillCartPlusFill size={35} />
+        </Badge>
       </div>
     </Link>
   );

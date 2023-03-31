@@ -1,36 +1,23 @@
-import { Difference } from "@mui/icons-material";
-import { dialogClasses } from "@mui/material";
 import React, { useContext } from "react";
 import { CartContex } from "../../context/CartContex";
-
+import CartMenu from "../CartMenu/CartMenu";
 
 const Cart = () => {
-
-const {cart, clearCart} = useContext (CartContex)
+  const { cart, clearCart } = useContext(CartContex);
 
   return (
-    <div style={{width: "100%", display: "flex", justifyContent:"space-evenly", marginTop: "20px"}}>
+    <div style={{ display: "flex", flexWrap: "wrap" }}>
       {cart.map((elemento) => {
-        return <div key= {elemento.id} style={{border: "2px solid brown", borderRadius: "4px", textAlign: "center", padding: "10px"}}>
-          <h2>
-            {elemento.title}
-          </h2>
-          <img src={elemento.img} alt={elemento.title} style={{width:"200px", padding:" 10px", height:" 200px", borderRadius: "5px"}}/>
-          <h3>
-            ${elemento.price}
-          </h3>
-          <h3>
-          Cantidad: {elemento.quantity}
-          </h3>
-       
-
-
-        </div>
-        
-      
-      } )}
-
-      <button onClick= {clearCart} > vaciar carrito </button>
+        return (
+          <div>
+            <CartMenu elemento={elemento} />
+          </div>
+        );
+      })}
+      <div tyle={{display:"flex"}}>
+        <h1 >total carrito</h1>
+        <h2> aca va el total</h2>
+      </div>
     </div>
   );
 };

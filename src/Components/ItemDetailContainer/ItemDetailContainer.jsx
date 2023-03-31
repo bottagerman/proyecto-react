@@ -32,6 +32,7 @@ const ItemDetailContainer = () => {
 
     agregarAlCarrito(producto);
   };
+
   return (
     <div>
       <ItemDetail producto= {productoSeleccionado} onAdd ={onAdd} />
