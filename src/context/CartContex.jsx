@@ -32,10 +32,29 @@ const CartContexProvider = ({ children }) => {
     setCart ([])
   }
 
+  const getTotalQuantity = () =>{
+
+    const total = cart.reduce((acc, elemento)=>{
+      return acc + elemento.quantity 
+    }, 0 )
+    return total
+  }
+
+  const getTotalPrice = () =>{
+    
+    let precioTotal = cart.reduce((acc, elemento) =>{
+      return acc + (elemento.quantity * elemento.price)
+    }, 0 )
+
+    return precioTotal
+  }
+
   let data = {
     cart,
     agregarAlCarrito,
     clearCart, 
+    getTotalQuantity,
+    getTotalPrice
   };
 
   return <CartContex.Provider value={data}>{children}</CartContex.Provider>;

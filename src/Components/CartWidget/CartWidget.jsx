@@ -9,7 +9,9 @@ import Badge from '@mui/material/Badge';
 
 const CartWidget = () => {
 
-  const {cart} = useContext (CartContex); 
+  const {getTotalQuantity} = useContext (CartContex); 
+
+  const total = getTotalQuantity ()
 
   return (
     <Link to={"/cart"}>
@@ -18,7 +20,7 @@ const CartWidget = () => {
         color: "black",
 
       }}>
-        <Badge badgeContent = {cart.lenght} color = "error" showZero> 
+        <Badge badgeContent = {total} color = "error" showZero> 
         <BsFillCartPlusFill size={35} />
         </Badge>
       </div>

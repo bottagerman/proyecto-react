@@ -26,7 +26,7 @@ const Items = ({element}) => {
       </CardContent>
       <CardActions>
        <Link to={`/itemDetail/${element.id}`} style={{textDecoration:"none"}}>
-        <Button size="small" color="error" variant ="contained" >Ver detalle</Button>
+        <Button size="small" color="warning" variant ="contained" >Ver detalle</Button>
        </Link>
       </CardActions>
     </Card>
