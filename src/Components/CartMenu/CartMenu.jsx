@@ -6,11 +6,29 @@ import CardMedia from "@mui/material/CardMedia";
 import { CartContex } from "../../context/CartContex";
 import Typography from "@mui/material/Typography";
 import DeleteIcon from "@mui/icons-material/Delete";
+import Swal from 'sweetalert2'
 import { useContext } from "react";
 
 const CartMenu = ({ elemento }) => {
 
   const {deleteProductById } = useContext(CartContex);
+
+  const eliminarProducto = () =>{
+    Swal.fire({
+      title: '¿Seguro desea eliminar este producto?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Eliminar',
+      denyButtonText: `No eliminar`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire('Se elimino el producto con exito', '', 'success')
+        deleteProductById(elemento.id)
+      } else if (result.isDenied) {
+        Swal.fire('No se elimino el producto', '', 'info')
+      }
+    })
+  }
 
   return (
     <div>
@@ -40,7 +58,7 @@ const CartMenu = ({ elemento }) => {
           </Typography>
         </CardContent>
         <CardActions style={{cursor: "pointer"}}>
-          <DeleteIcon onClick={() => deleteProductById(elemento.id) }/>
+          <DeleteIcon onClick={() => eliminarProducto()}/>
         </CardActions>
       </Card>
     </div>

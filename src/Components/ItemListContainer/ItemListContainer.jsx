@@ -3,14 +3,26 @@ import { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebaseConfig";
+import ClipLoader from "react-spinners/ClipLoader";
 import { collection, getDocs, query, where } from "firebase/firestore";
+
+const override = {
+  display: "block",
+  margin: "35vh auto",
+  
+};
 
 const ItemListContainer = () => {
   const { categoryName } = useParams();
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const itemsCollection = categoryName ? query(collection(db, "productos"), where("category", "==", categoryName)):collection(db, "productos")
+    const itemsCollection = categoryName
+      ? query(
+          collection(db, "productos"),
+          where("category", "==", categoryName)
+        )
+      : collection(db, "productos");
     getDocs(itemsCollection).then((res) => {
       const data = res.docs.map((productos) => {
         return {
@@ -21,10 +33,14 @@ const ItemListContainer = () => {
       setItems(data);
     });
   }, [categoryName]);
- 
+
   return (
     <div>
-      <ItemList items={items} />
+      {items.length > 0 ? (
+        <ItemList items={items} />
+      ) : (
+        <ClipLoader color="rgb(128, 64, 0)" size={100} cssOverride={override} />
+      )}
     </div>
   );
 };
