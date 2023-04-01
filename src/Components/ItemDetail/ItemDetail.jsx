@@ -1,11 +1,12 @@
 import React from "react";
-
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import ItemCount from "../ItemCount/ItemCount";
 
-const ItemDetail = ({ producto, onAdd }) => {
+const ItemDetail = ({ producto, onAdd, quantity }) => {
+  
+ 
   return (
     <div style={{ display: "flex", justifyContent: "center", margin: "40px" }}>
       <img
@@ -39,7 +40,7 @@ const ItemDetail = ({ producto, onAdd }) => {
               </Typography>
             </CardContent>
             <CardActions>
-              <ItemCount stock={producto.stock} onAdd={onAdd} />
+              <ItemCount stock={producto.stock} onAdd={onAdd} initial = {quantity}/>
             </CardActions>
           </div>
         </React.Fragment>

@@ -9,9 +9,12 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 const ItemDetailContainer = () => {
   const { id } = useParams();
 
-  const { agregarAlCarrito } = useContext(CartContex);
+  const { agregarAlCarrito, getQuantityById } = useContext(CartContex);
 
   const [productoSeleccionado, setProductoSeleccionado] = useState({});
+
+  let quantity = getQuantityById(id);
+
 
   useEffect(() => {
     const itemCollection = collection(db, "productos");
@@ -35,8 +38,7 @@ const ItemDetailContainer = () => {
 
   return (
     <div>
-      <ItemDetail producto= {productoSeleccionado} onAdd ={onAdd} />
-
+      <ItemDetail producto= {productoSeleccionado} onAdd ={onAdd} quantity = {quantity} />
     </div>
   );
 };

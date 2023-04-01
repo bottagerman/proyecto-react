@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import { WidthFull } from "@mui/icons-material";
 
-const ItemCount = ({ stock, initial = 1, onAdd }) => {
+const ItemCount = ({ stock, initial = 1 , onAdd }) => {
   const [contador, setContador] = useState(initial);
+
+  useEffect(()=>{
+    setContador(initial)
+  },[initial])
 
   const sumar = () => {
     if (contador < stock) {
