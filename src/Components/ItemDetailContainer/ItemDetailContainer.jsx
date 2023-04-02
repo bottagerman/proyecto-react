@@ -4,6 +4,7 @@ import { CartContex } from "../../context/CartContex";
 import { useState, useEffect } from "react";
 import { getDoc, collection, doc } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
+import Swal from 'sweetalert2';
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
@@ -34,6 +35,14 @@ const ItemDetailContainer = () => {
     };
 
     agregarAlCarrito(producto);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Producto agregado exitosamente',
+      width: "28em", 
+      showConfirmButton: false,
+      timer: 1500
+    })
   };
 
   return (

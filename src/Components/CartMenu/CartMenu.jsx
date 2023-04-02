@@ -25,7 +25,7 @@ const CartMenu = ({ elemento }) => {
         Swal.fire('Se elimino el producto con exito', '', 'success')
         deleteProductById(elemento.id)
       } else if (result.isDenied) {
-        Swal.fire('No se elimino el producto', '', 'info')
+        Swal.fire('No se elimino el producto', '', 'error')
       }
     })
   }

@@ -27,7 +27,6 @@ const Cart = () => {
     })
   }
 
-
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
       {cart.map((elemento) => {
