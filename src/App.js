@@ -1,5 +1,4 @@
-import ConsumiendoApis from "./Components/ConsumiendoApis/ConsumiendoApis";
-import Footer from "./Components/Footer/Footer";
+
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer.jsx";
 import Navbar from "./Components/Navbar/Navbar.jsx";
 import Cart from "./Components/Cart/Cart";

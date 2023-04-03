@@ -1,10 +1,10 @@
 import * as React from "react";
+import { useState } from "react";
+import { addDoc, collection, updateDoc, doc } from "firebase/firestore";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { useState } from "react";
-import { Button } from "@mui/material";
-import { addDoc, collection, updateDoc, doc } from "firebase/firestore";
-import { db } from "../firebaseConfig";
+import { Button } from '@mui/material';
+import { db } from "../../firebaseConfig";
 
 const FormCheckout = ({ cart, getTotalPrice, setOrderId, clearCart }) => {
   const [userData, setUserData] = useState({
@@ -44,7 +44,7 @@ const FormCheckout = ({ cart, getTotalPrice, setOrderId, clearCart }) => {
       }}
       noValidate
       autoComplete="off"
-      onSubmit={handleSubmit}
+      onSubmit = {handleSubmit}
     >
       <div>
         <TextField

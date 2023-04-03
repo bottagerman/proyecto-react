@@ -3,7 +3,7 @@ import { CartContex } from "../../context/CartContex";
 import Button from "@mui/material/Button";
 import CartMenu from "../CartMenu/CartMenu";
 import Swal from "sweetalert2";
-import FormCheckout from "../../FormCheckout/FormCheckout";
+import FormCheckout from "../FormCheckout/FormCheckout";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
@@ -32,18 +32,14 @@ const Cart = () => {
     });
   };
 
-  if(orderId){
-    return(
+  if (orderId) {
+    return (
       <div>
-        <h1>
-          Gracias por su compra! 
-        </h1>
-        <h3>
-          Su comprobante es: {orderId}
-        </h3>
+        <h1>Gracias por su compra!</h1>
+        <h3>Su comprobante es: {orderId}</h3>
         <Link to="/"> Seguir comprando </Link>
       </div>
-    )
+    );
   }
 
   return (
@@ -75,7 +71,8 @@ const Cart = () => {
                   variant="contained"
                   color="success"
                   sx={{ mt: 20, ml: "20px" }}
-                  onClick={()=>setShowForm(true)}>
+                  onClick={() => setShowForm(true)}
+                >
                   Checkout
                 </Button>
               </div>
@@ -83,7 +80,12 @@ const Cart = () => {
           </div>
         </div>
       ) : (
-        <FormCheckout cart={cart} getTotalPrice={getTotalPrice} setOrderId ={setOrderId} clearCart = {clearCart} />
+        <FormCheckout
+          cart={cart}
+          getTotalPrice={getTotalPrice}
+          setOrderId={setOrderId}
+          clearCart={clearCart}
+        />
       )}
     </div>
   );
