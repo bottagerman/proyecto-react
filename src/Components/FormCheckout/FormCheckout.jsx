@@ -34,6 +34,7 @@ const FormCheckout = ({ cart, getTotalPrice, setOrderId, clearCart }) => {
     cart.map((productos) => {
       let refDoc = doc(db, "productos", productos.id);
       updateDoc(refDoc, { stock: productos.stock - productos.quantity });
+      return productos
     });
   };
   return (
