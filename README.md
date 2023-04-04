@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Bienvenidos a Leather & Steel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue creado con npm create react app, se trata de un ecommerce donde se ofrecen trabajos de labrado de cuero 100% personalizados, cuchillos con sus respectivas vainas, bolsos y sillines para motos contando con una amplia variedad de cueros. 
 
-## Available Scripts
+## Material UI
 
-In the project directory, you can run:
+Para las `cards` y los `buttons` entre otros, se utilizaron componentes de `Material UI`, dandole sus respectivos estilos segun se necesitaba. 
 
-### `npm start`
+## Vercel
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Utilice `Vercel` para el deploy del proyecto. El link para visitar la pagina es : [https://proyecto-react-eta.vercel.app/](https://proyecto-react-eta.vercel.app/) 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Firebase/Firestore
 
-### `npm test`
+Utilizando Firebase como base de datos, fui cargando cada producto con sus respectiva informacion para la ejecucion optima de los mismo en Leather and Steel, pudiendo comprar y modificar el stock de cada producto. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Gif
 
-### `npm run build`
+En el repositorio se encontraran los `Gifs` que corresponden a las rubricas.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## .env
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Utilice variables de entorno para proteger la informacion sensible. 
+Dejo por aca el `firebaseConfing` para que pueda ser leido. 
 
-### `npm run eject`
+``apiKey``: AIzaSyDSytjq636y-mJL15FerUtQ3xRq4u8aGUY
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+``authDomain``: leather-and-steel.firebaseapp.com
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+``projectId``: leather-and-steel 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+``storageBucket``: leather-and-steel.appspot.com
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+``messagingSenderId``: 311577305079
 
-## Learn More
+``appId``: 1:311577305079:web:0a4dacca41b787084798f2
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Esta informacion sera eliminada luego de recibir la nota del trabajo final.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Autoevaluacion del proyecto
 
-### Code Splitting
+Si bien es un proyecto que considero que cumple con mis espectativas y `espero` que la de los tutores, encuentro pequeñas cosas que se podrian optimizar dentro de mi ecommerce. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+La distribucion y el armado de las carpetas dentro `Components` podria estar mas prolijo, dentro del `FormCheckout` hay JS y HTML.
 
-### Analyzing the Bundle Size
+Y ni hablar de los estilos que ademas de lo anteriormente mencionado seran sin lugar a dudas mejorados. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Conclucion
 
-### Making a Progressive Web App
+Una cursada que disfrute muchisimo reflejada en un proyecto que quiero y disfrute en armar, muchas gracias por entrar, leer y evaluar. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
