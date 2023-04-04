@@ -1,5 +1,4 @@
 import { BsFillCartPlusFill } from "react-icons/bs";
-import styles from "./CartWidget.module.css"
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContex } from "../../context/CartContex";
