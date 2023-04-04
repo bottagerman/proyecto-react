@@ -4,7 +4,8 @@ import Button from "@mui/material/Button";
 import CartMenu from "../CartMenu/CartMenu";
 import Swal from "sweetalert2";
 import FormCheckout from "../FormCheckout/FormCheckout";
-import { Link } from "react-router-dom";
+import Comprobante from "../Comprobante/Comprobante";
+import EmptyCart from "../EmptyCart/EmptyCart";
 
 const Cart = () => {
   const { cart, clearCart, getTotalPrice } = useContext(CartContex);
@@ -35,9 +36,7 @@ const Cart = () => {
   if (orderId) {
     return (
       <div>
-        <h1>Gracias por su compra!</h1>
-        <h3>Su comprobante es: {orderId}</h3>
-        <Link to="/"> Seguir comprando </Link>
+        <Comprobante orderId={orderId} />
       </div>
     );
   }
@@ -54,30 +53,34 @@ const Cart = () => {
               </div>
             );
           })}
-          <div style={{ display: "block" }}>
-            <h2> total carrito: ${precioTotal}</h2>
+          {cart.length > 0 ? (
+            <div style={{ display: "block" }}>
+              <h2> total carrito: ${precioTotal}</h2>
 
-            {cart.length > 0 && (
-              <div>
-                <Button
-                  onClick={vaciarCarrito}
-                  variant="contained"
-                  color="warning"
-                  sx={{ mt: 20 }}
-                >
-                  Vaciar Carrito
-                </Button>
-                <Button
-                  variant="contained"
-                  color="success"
-                  sx={{ mt: 20, ml: "20px" }}
-                  onClick={() => setShowForm(true)}
-                >
-                  Checkout
-                </Button>
-              </div>
-            )}
-          </div>
+              {cart.length > 0 && (
+                <div>
+                  <Button
+                    onClick={vaciarCarrito}
+                    variant="contained"
+                    color="warning"
+                    sx={{ mt: 20 }}
+                  >
+                    Vaciar Carrito
+                  </Button>
+                  <Button
+                    variant="contained"
+                    color="success"
+                    sx={{ mt: 20, ml: "20px" }}
+                    onClick={() => setShowForm(true)}
+                  >
+                    Checkout
+                  </Button>
+                </div>
+              )}
+            </div>
+          ) : (
+            <EmptyCart />
+          )}
         </div>
       ) : (
         <FormCheckout

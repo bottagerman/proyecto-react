@@ -46,7 +46,10 @@ const FormCheckout = ({ cart, getTotalPrice, setOrderId, clearCart }) => {
       autoComplete="off"
       onSubmit = {handleSubmit}
     >
-      <div>
+      <div style={{border:"2px solid black", marginTop:"25px"}}>
+
+        <h3 style={{margin:"25px"}}>Complete el formulario para finalizar la compra:</h3>
+
         <TextField
           required
           id="outlined-required"
